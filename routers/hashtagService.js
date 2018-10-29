@@ -7,11 +7,9 @@ const BASE_URL = 'http://localhost:8088'
 const api = apiAdapter(BASE_URL)
 
 router.get('/hashtags', isAuthorized, (req, res) => {
-  // if (isAuthorized(req, res)) {
-    api.get(req.path).then(resp => {
-      res.send(resp.data)
-    })
-  // }
+  api.get(req.path).then(resp => {
+    res.send(resp.data)
+  })
 })
 
 router.get('/hashtags/:name', isAuthorized, (req, res) => {
